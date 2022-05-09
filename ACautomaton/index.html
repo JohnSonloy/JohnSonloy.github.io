@@ -3,17 +3,22 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>标签 : 数学 - Johnsonloy&#39;s Blog</title>
+	<title>ACautomaton - Johnsonloy&#39;s Blog</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta property="og:type" content="website">
-<meta property="og:title" content="Johnsonloy&#39;s Blog">
-<meta property="og:url" content="http://johnsonloy.github.io/tags/%E6%95%B0%E5%AD%A6/index.html">
+	<meta name="description" content="AC自动机 阅读本章之前应该具备的前置知识：KMP（其实并不是很重要但是还是要会的），trie字典树 首先对于若干的模式串我们把它插入到一个trie树中，我们考虑，对于一个非常水的模板题： 对于一个文本串，计算所有模式串在其中出现次数的总和 我们考虑把这个文本串在这个trie树上面跑一遍（像是插入一样 但是我们发现，如果说我们当前匹配的时候发现失配了，根据KMP自动机的思想来说，我们应该找尽量长的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACautomaton">
+<meta property="og:url" content="http://johnsonloy.github.io/ACautomaton/index.html">
 <meta property="og:site_name" content="Johnsonloy&#39;s Blog">
+<meta property="og:description" content="AC自动机 阅读本章之前应该具备的前置知识：KMP（其实并不是很重要但是还是要会的），trie字典树 首先对于若干的模式串我们把它插入到一个trie树中，我们考虑，对于一个非常水的模板题： 对于一个文本串，计算所有模式串在其中出现次数的总和 我们考虑把这个文本串在这个trie树上面跑一遍（像是插入一样 但是我们发现，如果说我们当前匹配的时候发现失配了，根据KMP自动机的思想来说，我们应该找尽量长的">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-09T20:14:41.000Z">
+<meta property="article:modified_time" content="2022-05-09T13:09:07.000Z">
 <meta property="article:author" content="Johnsonloy">
+<meta property="article:tag" content="字符串">
 <meta name="twitter:card" content="summary">
 
 	<meta name="theme-color" content="#5e72e4">
@@ -430,20 +435,6 @@
 
 <div class="page-information-card-container">
 	
-		
-<div class="page-information-card card bg-gradient-secondary shadow-lg border-0">
-	<div class="card-body">
-		<h3 class="text-black">标签 : 数学 </h3>
-		
-			<p class="text-black mt-3 mb-0 opacity-8">
-				<i class="fa fa-file-o mr-1"></i>
-				3 篇文章
-			</p>
-		
-	</div>
-</div>
-
-	
 </div>
 
 <div id="sidebar_mask"></div>
@@ -472,18 +463,39 @@
 		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
 			<div id="leftbar_part2_inner" class="card-body">
 				
-				<div class="nav-wrapper" style="padding-top: 5px; display:none; ">
+				<div class="nav-wrapper" style="padding-top: 5px;">
 	                <ul class="nav nav-pills nav-fill" role="tablist">
 						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
 						<li class="nav-item sidebar-tab-switcher">
-							<a class="active show" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
 						</li>
 	                </ul>
 				</div>
 				<div>
 					<div class="tab-content" style="padding: 10px 10px 0 10px;">
 						
-						<div class="tab-pane fade text-center active show" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
 							<img id="leftbar_overview_author_image" src="https://avatars.githubusercontent.com/u/91672298?v=4" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
 							<h6 id="leftbar_overview_author_name">Johnsonloy</h6>
 							<nav class="site-state">
@@ -561,19 +573,17 @@
 	<main id="main" class="site-main" role="main">
 		
 		
-		
-		
 			
-	<article class="post card bg-white shadow-sm border-0 ">
+	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
-		<a class="post-title" href="/%E6%95%B0%E5%AD%A6/">数学</a>
+		<a class="post-title" href="/ACautomaton/">ACautomaton</a>
 		<div class="post-meta">
 			
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-5-8 0:00:00 | 编辑于 2022-5-9 13:09:28">2022-5-8 0:00
+							<time title="发布于 2022-5-9 20:14:41 | 编辑于 2022-5-9 13:09:07">2022-5-9 20:14
 							</time>
 						</div>
 					
@@ -582,7 +592,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							2k 字
+							1.1k 字
 						</div>
 					
 						
@@ -590,159 +600,182 @@
 						
 						<div class="post-meta-detail post-meta-detail-readingtime">
 							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
+							3 分钟
 						</div>
 					
 		</div>
 		
 	</header>
 
-	<div class="post-content">
-		
-			
-				数论
-伯特兰-切比雪夫定理
-这个东西说实话还挺难的……（啊我说的是这个东西要是出题的话）
-为什么这东西要用二项式系数进行证明……感觉非常奇怪的证明方式唉
-P5535 【XR-3】小道消息
-这个题有三种情况
-首先我们考虑，和一个质数不互质的数，他一定是这个质数的倍数
+	<div class="post-content" id="post_content">
+		<h1>AC自动机</h1>
+<p>阅读本章之前应该具备的前置知识：KMP（其实并不是很重要但是还是要会的），trie字典树</p>
+<p>首先对于若干的模式串我们把它插入到一个trie树中，我们考虑，对于一个非常水的模板题：</p>
+<p>对于一个文本串，计算所有模式串在其中出现次数的总和</p>
+<p>我们考虑把这个文本串在这个trie树上面跑一遍（像是插入一样</p>
+<p>但是我们发现，如果说我们当前匹配的时候发现失配了，根据KMP自动机的思想来说，我们应该找尽量长的已经匹配了的长度，那么这在trie树上面就应该对应的是：<strong>已经匹配了的这个字符串的最长后缀</strong></p>
+<p>因为我们的trie树上每一个节点都对应着一个字符串，那么我们可以通过将一个节点指向另一个节点来代表最长后缀，这就是AC自动机的核心：fail指针</p>
+<p>我们在求fail指针的时候，如果说这个节点要求fail指针，那么指向的节点一定是最长后缀，那么，这个节点的父亲的fail指针的这个字符节点也就是这个节点的fail指针，就是：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo stretchy="false">[</mo><mi>t</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">]</mo><mo>=</mo><mi>t</mi><mo stretchy="false">[</mo><mi>f</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">fail[t[p][i]]=t[fail[p]][i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">ai</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mopen">[</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">p</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">ai</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mopen">[</span><span class="mord mathnormal">p</span><span class="mclose">]]</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span></span></span></span></p>
+<p>意会一下</p>
+<p>题目：</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3808">P3808 【模板】AC 自动机（简单版）</a></h1>
+<p>板子题</p>
+<p>我们在文本串进行匹配的时候看一下有多少个点在匹配的时候是一个字符串的结束节点，就说明这个字符串被匹配过了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3796">P3796 【模板】AC 自动机（加强版）</a></h1>
+<p>每一次匹配到一个结束节点的时候，把这个结束节点对应的字符串的位置cnt加一</p>
+<p>然后打擂台求最大，然后输出，要按顺序</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3121">P3121 [USACO15FEB]Censoring G</a></h1>
+<p>每一次匹配到一个结束节点就对应的删掉这个字符串</p>
+<p>删掉字符串用什么呢？</p>
+<p>栈！</p>
+<p>如果说我们删掉这个字符串就是对应的把这个字符串从栈里去掉，每一个字符最多会被去掉一次所以复杂度是可以保证的</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3966">P3966 [TJOI2013]单词</a></h1>
+<p>我们在AC自动机上面记录一下每一个字符属于多少个字符串，这个直接fail树求子树和</p>
+<p>求子树和的时候是可以用我们在求fail指针的时候求出来的bfs序列倒叙求子树和的</p>
+<p>求出来子树和之后，这个单词出现了多少次不也就出来了吗</p>
+<p>因为我们求的是出现了多少次，所以直接求出来它属于多少个字符串就可以了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2444">P2444 [POI2000]病毒</a></h1>
+<p>这个题思路倒是挺清奇，不同寻常</p>
+<p>如果说我们正难则反，先考虑把一个无限长的序列放在AC自动机上面跑一遍，那么说明，一定会出现一个循环使得AC自动机无限跑，如果不是的话，就一定会和病毒序列进行匹配</p>
+<p>那么问题就转化成了能不能在AC自动机上面找到一个环（前提是这个AC自动机是用的trie图写法，就是把一个空结点指向fail指针的当前字符节点）</p>
+<p>跑一遍dfs就好了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4052">P4052 [JSOI2007]文本生成器</a></h1>
+<p>AC自动机上面跑dp的板子题了属于是</p>
+<p>我们考虑一下：正难则反容斥，总方案数减去不合法</p>
+<p>设dp函数<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>表示当前串的长度为i，AC自动机上面是在j节点的不合法方案数</p>
+<p>我们会发现，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo>+</mo><mn>1.</mn><mi>t</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i+1.t[j][p]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0496em;vertical-align:-0.3552em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.5198em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mbin mtight">+</span><span class="mord mtight">1.</span><span class="mord mathnormal mtight">t</span><span class="mopen mtight">[</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mclose mtight">]</span><span class="mopen mtight">[</span><span class="mord mathnormal mtight">p</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3552em;"><span></span></span></span></span></span></span></span></span></span>是可以通过<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i,j}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3117em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>进行转移的，只要这个节点是合法的，合法指的是后缀不是生成的文本其中之一，就是说，他自己和fail树里的节点里面没有一个是字符串的结尾节点</p>
+<p>然后转移到最后用<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><msup><mn>6</mn><mi>m</mi></msup></mrow><annotation encoding="application/x-tex">26^m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6644em;"></span><span class="mord">2</span><span class="mord"><span class="mord">6</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6644em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span></span></span></span>减去上面的不合法方案数就是答案</p>
+<h1>完结（暂时）</h1>
 
-如果这个数字是质数：如果说，在这些号码里，这个质数乘二之后大于这些号码中的任何一个...
-			
-		
 	</div>
+
+	
+
+	
 
 	
 		<div class="post-tags">
 			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>
 		</div>
 	
 </article>
 
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-2-26 0:00:00 | 编辑于 2022-5-9 13:09:28">2022-2-26 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							5.4k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							25 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-				组合数
-容斥 先鸽着吧
-1.（清华集训 主旋律）给定N个点的有向图，多少个强联通子图 N&lt;=15
-解法
-（图里可能有 N2N^2N2 条边）爆搜过不去
-简单问题：给定一个有向图，问有多少个子图是DAG
-DP f[s]f[s]f[s] 表示在点集之间删掉一些边使得剩下的图是一个DAG的方案数量
-枚举哪些点的入度为0，然后递归
-f[s]=∑T⊆S...
-			
-		
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://johnsonloy.github.io/ACautomaton/&text=ACautomaton" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
 	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : 'ACautomaton',
+	    description : 'AC自动机
+阅读本章之前应该具备的前置知识：KMP（其实并不是很重要但是还是要会的），trie字典树...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'http://johnsonloy.github.io/ACautomaton/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
 
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
-		</div>
-	
-</article>
 
 
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/%E6%95%B0%E5%AD%A6/" rel="next"> 数学</a></div></div>
+
+
+
+
 		
-		<a class="post-title" href="/%E7%BE%A4%E8%AE%BA/">群论</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-1-29 0:00:00 | 编辑于 2022-5-9 13:09:28">2022-1-29 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							1.7k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
-						</div>
-					
-		</div>
 		
-	</header>
-
-	<div class="post-content">
-		
-			
-				群论初步 学习笔记
-群 定义
-一个集合被称为群当且仅当它满足以下四个条件：
-
-
-具有乘法封闭性，即：任意的 a,b∈G,a∗b∈Ga,b\in G,a*b\in Ga,b∈G,a∗b∈G
-
-
-具有结合律：(a∗b)∗c=a∗(b∗c)( a * b ) * c = a * ( b * c )(a∗b)∗c=a∗(b∗c)，左右乘是两个不一样的定义
-...
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
-		</div>
-	
-</article>
-
-
-
-
-
-
 		
 		
 
