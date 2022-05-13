@@ -3,20 +3,20 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>关于 - Johnsonloy&#39;s Blog</title>
+	<title>主席树 - Johnsonloy&#39;s Blog</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta name="description" content="在这里写下关于你的一切。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://johnsonloy.github.io/about/index.html">
+	<meta name="description" content="主席树 全称为：可持久化线段树 我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本） 我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受 所以我们应该进行一些可持久化的处理： 我们发现对于单点修改来说，线段树最多改变的就是log2n个节点 所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主席树">
+<meta property="og:url" content="http://johnsonloy.github.io/%E4%B8%BB%E5%B8%AD%E6%A0%91/index.html">
 <meta property="og:site_name" content="Johnsonloy&#39;s Blog">
-<meta property="og:description" content="在这里写下关于你的一切。">
+<meta property="og:description" content="主席树 全称为：可持久化线段树 我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本） 我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受 所以我们应该进行一些可持久化的处理： 我们发现对于单点修改来说，线段树最多改变的就是log2n个节点 所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-13T14:03:33.832Z">
-<meta property="article:modified_time" content="2022-03-27T12:53:32.000Z">
+<meta property="article:published_time" content="2022-05-13T21:43:18.000Z">
+<meta property="article:modified_time" content="2022-05-13T14:03:30.380Z">
 <meta property="article:author" content="Johnsonloy">
 <meta name="twitter:card" content="summary">
 
@@ -462,18 +462,39 @@
 		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
 			<div id="leftbar_part2_inner" class="card-body">
 				
-				<div class="nav-wrapper" style="padding-top: 5px; display:none; ">
+				<div class="nav-wrapper" style="padding-top: 5px;">
 	                <ul class="nav nav-pills nav-fill" role="tablist">
 						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
 						<li class="nav-item sidebar-tab-switcher">
-							<a class="active show" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
 						</li>
 	                </ul>
 				</div>
 				<div>
 					<div class="tab-content" style="padding: 10px 10px 0 10px;">
 						
-						<div class="tab-pane fade text-center active show" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
 							<img id="leftbar_overview_author_image" src="https://avatars.githubusercontent.com/u/91672298?v=4" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
 							<h6 id="leftbar_overview_author_name">Johnsonloy</h6>
 							<nav class="site-state">
@@ -552,17 +573,16 @@
 		
 		
 			
-
 	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
-		<a class="post-title" href="/about/index.html">关于</a>
+		<a class="post-title" href="/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树</a>
 		<div class="post-meta">
 			
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-5-13 14:03:33 | 编辑于 2022-3-27 12:53:32">2022-5-13 14:03
+							<time title="发布于 2022-5-13 21:43:18 | 编辑于 2022-5-13 14:03:30">2022-5-13 21:43
 							</time>
 						</div>
 					
@@ -571,7 +591,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							11 字
+							622 字
 						</div>
 					
 						
@@ -579,7 +599,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-readingtime">
 							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							1 分钟
+							2 分钟
 						</div>
 					
 		</div>
@@ -587,10 +607,153 @@
 	</header>
 
 	<div class="post-content" id="post_content">
-		<p>在这里写下关于你的一切。</p>
+		<h1>主席树</h1>
+<p>全称为：可持久化线段树</p>
+<p>我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本）</p>
+<p>我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受</p>
+<p>所以我们应该进行一些可持久化的处理：</p>
+<p>我们发现对于单点修改来说，线段树最多改变的就是log2n个节点</p>
+<p>所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的节点</p>
+<p>然后从根节点记录一下这是哪个历史版本（因为根节点一定会改变）</p>
+<p>然后就没了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3919"><strong>P3919</strong> 【模板】可持久化线段树 1（可持久化数组）</a></h1>
+<p>这个题是个板子</p>
+<p>我们考虑，如果说对于一个数组来说，进行多次更改的复杂度为1，但是记录不同的状态就会变成n</p>
+<p>那么主席树就可以把这些的复杂度均摊下来变成log2n对吧</p>
+<p>然后就复杂度就变好了</p>
+<p>就是个板子嘛过了过了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3834"><strong>P3834</strong> 【模板】可持久化线段树 2</a></h1>
+<p>这个就比较经典（其实并不是很算板子的</p>
+<p>我们考虑，静态区间第k小……</p>
+<p>如果对于一个区间，我们把它放在桶里，是不是可以进行二分求出来第k小</p>
+<p>那么线段树上二分是一个比较经典的套路：如果说权值线段树根节点的左端点数字个数大于等于k说明第k小的数字是在左端点的，否则就是右端点（懂了吧</p>
+<p>我们就可以对于每一个都开一个线段树（但是并不是很优秀</p>
+<p>那我们想到，如果说对于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>的区间来说，如果说前面r个数字中有sum1个数字大于等于m，l个数字中有sum2个数字大于等于m，那么说明这个区间里面有sum1-sum2个数字大于等于m</p>
+<p>那么我们就可以在主席树上面二分了</p>
+<p>我们考虑在主席树上面存储上所有前缀的桶（当然要离散化）</p>
+<p>然后再主席树上面二分答案就可以了</p>
+<p>这个题还是挺不错的</p>
 
 	</div>
+
+	
+
+	
+
+	
 </article>
+
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://johnsonloy.github.io/%E4%B8%BB%E5%B8%AD%E6%A0%91/&text=主席树" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
+	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : '主席树',
+	    description : '主席树
+全称为：可持久化线段树
+我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修...',
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'http://johnsonloy.github.io/%E4%B8%BB%E5%B8%AD%E6%A0%91/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
+
+
+
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/block/" rel="next"> block</a></div></div>
+
 
 
 

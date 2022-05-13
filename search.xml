@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>主席树</title>
+      <link href="/%E4%B8%BB%E5%B8%AD%E6%A0%91/"/>
+      <url>/%E4%B8%BB%E5%B8%AD%E6%A0%91/</url>
+      
+        <content type="html"><![CDATA[<h1>主席树</h1><p>全称为：可持久化线段树</p><p>我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本）</p><p>我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受</p><p>所以我们应该进行一些可持久化的处理：</p><p>我们发现对于单点修改来说，线段树最多改变的就是log2n个节点</p><p>所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的节点</p><p>然后从根节点记录一下这是哪个历史版本（因为根节点一定会改变）</p><p>然后就没了</p><h1><a href="https://www.luogu.com.cn/problem/P3919"><strong>P3919</strong> 【模板】可持久化线段树 1（可持久化数组）</a></h1><p>这个题是个板子</p><p>我们考虑，如果说对于一个数组来说，进行多次更改的复杂度为1，但是记录不同的状态就会变成n</p><p>那么主席树就可以把这些的复杂度均摊下来变成log2n对吧</p><p>然后就复杂度就变好了</p><p>就是个板子嘛过了过了</p><h1><a href="https://www.luogu.com.cn/problem/P3834"><strong>P3834</strong> 【模板】可持久化线段树 2</a></h1><p>这个就比较经典（其实并不是很算板子的</p><p>我们考虑，静态区间第k小……</p><p>如果对于一个区间，我们把它放在桶里，是不是可以进行二分求出来第k小</p><p>那么线段树上二分是一个比较经典的套路：如果说权值线段树根节点的左端点数字个数大于等于k说明第k小的数字是在左端点的，否则就是右端点（懂了吧</p><p>我们就可以对于每一个都开一个线段树（但是并不是很优秀</p><p>那我们想到，如果说对于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>的区间来说，如果说前面r个数字中有sum1个数字大于等于m，l个数字中有sum2个数字大于等于m，那么说明这个区间里面有sum1-sum2个数字大于等于m</p><p>那么我们就可以在主席树上面二分了</p><p>我们考虑在主席树上面存储上所有前缀的桶（当然要离散化）</p><p>然后再主席树上面二分答案就可以了</p><p>这个题还是挺不错的</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>block</title>
       <link href="/block/"/>
       <url>/block/</url>
