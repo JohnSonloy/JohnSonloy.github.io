@@ -16,7 +16,7 @@
 <meta property="og:description" content="主席树 全称为：可持久化线段树 我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本） 我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受 所以我们应该进行一些可持久化的处理： 我们发现对于单点修改来说，线段树最多改变的就是log2n个节点 所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-13T21:43:18.000Z">
-<meta property="article:modified_time" content="2022-05-13T14:03:30.380Z">
+<meta property="article:modified_time" content="2022-05-17T22:15:30.263Z">
 <meta property="article:author" content="Johnsonloy">
 <meta name="twitter:card" content="summary">
 
@@ -582,7 +582,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-5-13 21:43:18 | 编辑于 2022-5-13 14:03:30">2022-5-13 21:43
+							<time title="发布于 2022-5-13 21:43:18 | 编辑于 2022-5-17 22:15:30">2022-5-13 21:43
 							</time>
 						</div>
 					
@@ -591,7 +591,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							622 字
+							1.4k 字
 						</div>
 					
 						
@@ -599,7 +599,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-readingtime">
 							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							2 分钟
+							4 分钟
 						</div>
 					
 		</div>
@@ -633,6 +633,33 @@
 <p>我们考虑在主席树上面存储上所有前缀的桶（当然要离散化）</p>
 <p>然后再主席树上面二分答案就可以了</p>
 <p>这个题还是挺不错的</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2633"><strong>P2633</strong> Count on a tree</a></h1>
+<p>这是一道非常经典的树上主席树的题目</p>
+<p>首先我们考虑：如果对于一棵树上面两点间的路径来说，他们的路径可以说是他们各自到根的路径减去lca到根的路径再减去lca的父亲到根的路径</p>
+<p>那么我们会发现，一个点到根的路径包含的权值在dfs的时候是可以权值主席树搞出来的（不过当然是需要离散化的了</p>
+<p>既然这样直接二分就可以了</p>
+<h1>[<strong>P3168</strong> <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3168">CQOI2015]任务查询系统</a></h1>
+<p>这个就是一个板子题，如果说之前的主席树2是单点修改区间查询的话，这个就是区间修改单点查询</p>
+<p>那么我们就可以把这个东西转化成一个差分上面前缀和的方式</p>
+<p>对于每一个操作我们都把他转化成前端加后端减的操作就好了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4559"><strong>P4559</strong> [JSOI2018]列队</a></h1>
+<p>这个题由于什么排序不等式的东西（tbl题解）我们会发现，其实我们左边会有一部分的人向右跑，右边会有一部分人向左跑，并且相对顺序并不发生改变……</p>
+<p>那么我们权值主席树存一下每一个前缀位置对应的人都在哪些位置</p>
+<p>然后再主席树上面二分一下断点（左右跑的断点）然后用一些等差数列什么的东西求一下贡献</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3293"><strong>P3293</strong> [SCOI2016]美味</a></h1>
+<p>我们会发现，这个题在某些意义上面和最大异或和还挺像的</p>
+<p>还是像最大异或和一样从高位到低位考虑贡献贪心</p>
+<p>我们考虑，如果说前面的几位已经考虑过了，是不是应该考虑这一位是不是有和这一位异或起来等于1的一位</p>
+<p>就先把前面的几位答案搞出来，然后再权值主席树里面查找一下是不是有前面几位和答案一样，这意味不一样的数字，有的话这一位就可以变成1没有就不能</p>
+<p>然后完了</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2839"><strong>P2839</strong> [国家集训队]middle</a></h1>
+<p>又是一道调了一天的题啊（写主席树写多了一定要记住不是所有的主席树都是权值线段树</p>
+<p>我们会发现，如果说一个数字是这个序列的中位数的话（在这道题中）（因为这个题里面偶数序列的中位数是两个数后面的一个</p>
+<p>把所有的比中位数大的数字变成1，小于的变成-1，这个序列的和大于等于0</p>
+<p>那么我们就可以二分这个中位数，然后再权值线段树上面找</p>
+<p>我们会发现<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[b,c]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">]</span></span></span></span>这个区间里的所有数字必定选，其他的选前后缀</p>
+<p>那么我们就在线段树上面找到区间和，区间最大前缀，区间最大后缀</p>
+<p>然后合并check二分就好了</p>
 
 	</div>
 
