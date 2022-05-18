@@ -3,22 +3,22 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>P1827 - Johnsonloy&#39;s Blog</title>
+	<title>树链剖分 - Johnsonloy&#39;s Blog</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta name="description" content="P1827 奶牛 题目解读 其实说到底就是一道树的后序遍历反推而已嘛 首先，让我们看一遍题目： 给了一棵树的前序中序遍历，让求出后序遍历；（习惯性的打出分号 https:&#x2F;&#x2F;oi-wiki.org&#x2F;graph&#x2F;tree-basic&#x2F;#_14（附上OI-WIKI的讲解 首先我们知道前序遍历在开头是根节点，那么，就将根节点取出（用 string 可做到 那么，在中序遍历中找到根节点的位置，左边就是左子">
+	<meta name="description" content="树剖 一个神奇的数据结构 树链剖分，顾名思义就是把一棵树解剖成一些链 我们先来几个定义： 重儿子：对于一个节点来说，他的儿子们中子树体积最大的儿子称为他的重儿子 重边：两个重儿子连起来的边 重链：很多条重边连起来形成的一条链 轻儿子：除了重儿子之外的儿子 轻链：类比一下 我们会发现，重儿子是可以一遍dfs求出来的，我们会发现一个很重要的性质： 在dfs序中，重链的节点都是相邻的 那么我们就可以在这">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P1827">
-<meta property="og:url" content="http://johnsonloy.github.io/%E6%A0%91/index.html">
+<meta property="og:title" content="树链剖分">
+<meta property="og:url" content="http://johnsonloy.github.io/shupou/index.html">
 <meta property="og:site_name" content="Johnsonloy&#39;s Blog">
-<meta property="og:description" content="P1827 奶牛 题目解读 其实说到底就是一道树的后序遍历反推而已嘛 首先，让我们看一遍题目： 给了一棵树的前序中序遍历，让求出后序遍历；（习惯性的打出分号 https:&#x2F;&#x2F;oi-wiki.org&#x2F;graph&#x2F;tree-basic&#x2F;#_14（附上OI-WIKI的讲解 首先我们知道前序遍历在开头是根节点，那么，就将根节点取出（用 string 可做到 那么，在中序遍历中找到根节点的位置，左边就是左子">
+<meta property="og:description" content="树剖 一个神奇的数据结构 树链剖分，顾名思义就是把一棵树解剖成一些链 我们先来几个定义： 重儿子：对于一个节点来说，他的儿子们中子树体积最大的儿子称为他的重儿子 重边：两个重儿子连起来的边 重链：很多条重边连起来形成的一条链 轻儿子：除了重儿子之外的儿子 轻链：类比一下 我们会发现，重儿子是可以一遍dfs求出来的，我们会发现一个很重要的性质： 在dfs序中，重链的节点都是相邻的 那么我们就可以在这">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-02T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-05-18T13:45:08.260Z">
+<meta property="article:published_time" content="2022-05-18T19:49:16.000Z">
+<meta property="article:modified_time" content="2022-05-18T13:44:48.000Z">
 <meta property="article:author" content="Johnsonloy">
-<meta property="article:tag" content="图">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
 
 	<meta name="theme-color" content="#5e72e4">
@@ -577,13 +577,13 @@
 	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
-		<a class="post-title" href="/%E6%A0%91/">P1827</a>
+		<a class="post-title" href="/shupou/">树链剖分</a>
 		<div class="post-meta">
 			
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2021-10-2 0:00:00 | 编辑于 2022-5-18 13:45:08">2021-10-2 0:00
+							<time title="发布于 2022-5-18 19:49:16 | 编辑于 2022-5-18 13:44:48">2022-5-18 19:49
 							</time>
 						</div>
 					
@@ -592,7 +592,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							520 字
+							478 字
 						</div>
 					
 						
@@ -600,7 +600,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-readingtime">
 							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							2 分钟
+							1 分钟
 						</div>
 					
 		</div>
@@ -608,51 +608,33 @@
 	</header>
 
 	<div class="post-content" id="post_content">
-		<h1>P1827 奶牛</h1>
-<h2 id="题目解读">题目解读</h2>
-<p>其实说到底就是一道树的后序遍历反推而已嘛<br>
-首先，让我们看一遍题目：<br>
-给了一棵树的前序中序遍历，让求出后序遍历；（习惯性的打出分号<br>
-<a target="_blank" rel="noopener" href="https://oi-wiki.org/graph/tree-basic/#_14%EF%BC%88%E9%99%84%E4%B8%8AOI-WIKI%E7%9A%84%E8%AE%B2%E8%A7%A3">https://oi-wiki.org/graph/tree-basic/#_14（附上OI-WIKI的讲解</a><br>
-首先我们知道前序遍历在开头是根节点，那么，就将根节点取出（用 string 可做到<br>
-那么，在中序遍历中找到根节点的位置，左边就是左子树，右边就是右子树<br>
-在左子树中，前序遍历的左半截的开头就是左子树的根节点，再将根节点取出，再在中序遍历的左半边寻找……<br>
-然后再在右子树中重新做一遍这个过程，（注意）重新做的时候也要从左子树开始做<br>
-！！！这是什么！！！<br>
-赤裸裸的递归啊<br>
-所以！就可以用一个递归小函数来解决这个问题</p>
-<h2 id="另一件事情">另一件事情</h2>
-<p>在上述说明中呢，看上去非常的简单；<br>
-但是，上面提到了前序遍历的左半边，难道是说要在存一个 string 做吗；<br>
-是的，需要————<br>
-但是不要惊慌<br>
-接下来我要说的就是 string 的库函数之一：substr()；<br>
-substr(本质上是复制字符串的一部分放入新的字符串之中；<br>
-就省得孩子们一遍遍的 for 了</p>
-<h2 id="上代码-t2">上代码</h2>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h></span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">define</span> <span class="token macro-name">N</span> <span class="token expression"><span class="token number">10010</span></span></span>
-string a<span class="token punctuation">,</span>b<span class="token punctuation">;</span>
-<span class="token keyword">void</span> <span class="token function">dfs</span><span class="token punctuation">(</span>string aa<span class="token punctuation">,</span>string bb<span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>aa<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token punctuation">;</span>       <span class="token comment">//这是在判断边界</span>
-    <span class="token keyword">char</span> root<span class="token operator">=</span>aa<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>        <span class="token comment">//将前序遍历的根节点取出来</span>
-    <span class="token keyword">int</span> k<span class="token operator">=</span>bb<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">//找到根节点</span>
-    aa<span class="token punctuation">.</span><span class="token function">erase</span><span class="token punctuation">(</span>aa<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//将根节点从string中删除</span>
-    string laa<span class="token operator">=</span>aa<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span>raa<span class="token operator">=</span>aa<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span>lbb<span class="token operator">=</span>bb<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">,</span>rbb<span class="token operator">=</span>bb<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment">//激动人心的拆卸时间</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>laa<span class="token punctuation">,</span>lbb<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token function">dfs</span><span class="token punctuation">(</span>raa<span class="token punctuation">,</span>rbb<span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment">//遍历</span>
-    cout<span class="token operator">&lt;&lt;</span>root；         <span class="token comment">//由于是后序遍历所以最后输出根节点</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">&#123;</span>
-    cin<span class="token operator">>></span>a<span class="token operator">>></span>b<span class="token punctuation">;</span>
-    <span class="token function">dfs</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="尾声-t2">尾声</h2>
-<p>森森的第一篇学术博客结束</p>
+		<h1>树剖</h1>
+<p>一个神奇的数据结构</p>
+<p>树链剖分，顾名思义就是把一棵树解剖成一些链</p>
+<p>我们先来几个定义：</p>
+<p><strong>重儿子</strong>：对于一个节点来说，他的儿子们中子树体积最大的儿子称为他的重儿子</p>
+<p><strong>重边</strong>：两个重儿子连起来的边</p>
+<p><strong>重链</strong>：很多条重边连起来形成的一条链</p>
+<p><strong>轻儿子</strong>：除了重儿子之外的儿子</p>
+<p><strong>轻链</strong>：类比一下</p>
+<p>我们会发现，重儿子是可以一遍dfs求出来的，我们会发现一个很重要的性质：</p>
+<p>在dfs序中，重链的节点都是相邻的</p>
+<p>那么我们就可以在这个dfs序上面进行一点点数据结构对吧</p>
+<p>然后，我们还可以发现，如果对于两个点之间的距离来说，如果他们两个在同一条重链上面，就可以求lca</p>
+<p>这可以对于一些关于路径的东西进行求解</p>
+<p>路径就可以直接多次向上跳重链</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3384"><strong>P3384</strong> 【模板】轻重链剖分/树链剖分</a></h1>
+<p>模板就像是上面说的一样用线段树维护一下就好了</p>
+<p>我们考虑如果是路径的话，我们就x一直向上跳重链的顶部，然后区间求和最大……等等</p>
+<p>y同理</p>
+<p>一直到两个点都在同一条重链上的时候我们就再做一次区间求和最大就好了</p>
+<p>总体复杂度两个log一个log是树剖，另一个是线段树，所以常数并没有说多么小</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3313"><strong>P3313</strong> [SDOI2014]旅行</a></h1>
+<p>我们对于每一个宗教都开一个线段树，接下来的就像模板一样求就好了</p>
+<p>但是不仅仅是这样，因为空间会炸</p>
+<p>所以需要动态开点</p>
+<h1><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P2590"><strong>P2590</strong> [ZJOI2008]树的统计</a></h1>
+<p>不就是个板子……甚至比上面的板子还简单？</p>
 
 	</div>
 
@@ -663,7 +645,7 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
 	
 		<div class="post-tags">
 			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%9B%BE/" rel="tag">图</a>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>
 		</div>
 	
 </article>
@@ -705,7 +687,7 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
 				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
 			</button>
 		</a>
-		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://johnsonloy.github.io/%E6%A0%91/&text=P1827" tooltip="分享到 Telegram">
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://johnsonloy.github.io/shupou/&text=树链剖分" tooltip="分享到 Telegram">
 			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
 				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
 			</button>
@@ -722,15 +704,15 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
 </div>
 <script type="text/javascript">
 	socialShare("#share", {
-	    title : 'P1827',
-	    description : 'P1827 奶牛
-题目解读
-其实说到底就是一道树的后序遍历反推而已嘛
-首先，让我们看一遍题目：
-给了...',
+	    title : '树链剖分',
+	    description : '树剖
+一个神奇的数据结构
+树链剖分，顾名思义就是把一棵树解剖成一些链
+我们先来几个定义：
+重儿子：对...',
 	    wechatQrcodeTitle : "分享到微信",
 	    wechatQrcodeHelper : '微信扫描二维码',
-	    source : 'http://johnsonloy.github.io/%E6%A0%91/'
+	    source : 'http://johnsonloy.github.io/shupou/'
 	});
 	$("#share_show")[0].onclick = function(){
 		$("#share_container").addClass("opened");
@@ -779,7 +761,7 @@ string a<span class="token punctuation">,</span>b<span class="token punctuation"
 
 
 
-<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"><span class="page-navigation-extra-text"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>上一篇</span><a href="/LCA/" rel="prev"> LCA</a></div><div class="post-navigation-item post-navigation-next"></div></div>
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/%E4%B8%BB%E5%B8%AD%E6%A0%91/" rel="next"> 主席树</a></div></div>
 
 
 
