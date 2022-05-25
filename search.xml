@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/encrypt/"/>
+      <url>/encrypt/</url>
+      
+        <content type="html"><![CDATA[<p>test</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树链剖分</title>
       <link href="/shupou/"/>
       <url>/shupou/</url>

@@ -16,7 +16,7 @@
 <meta property="og:description" content="主席树 全称为：可持久化线段树 我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本） 我们当然可以每一次把线段树复制一遍，但是时空复杂度并不能够接受 所以我们应该进行一些可持久化的处理： 我们发现对于单点修改来说，线段树最多改变的就是log2n个节点 所以我们可以把更改的几个节点单独拿出来存储起来，没有改变的部分就指向之前的节点，改变了就指向改变的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-13T21:43:18.000Z">
-<meta property="article:modified_time" content="2022-05-21T01:16:52.416Z">
+<meta property="article:modified_time" content="2022-05-25T11:40:49.487Z">
 <meta property="article:author" content="Johnsonloy">
 <meta name="twitter:card" content="summary">
 
@@ -500,7 +500,7 @@
 							<nav class="site-state">
 								<div class="site-state-item site-state-posts">
 									<a href="/archives">
-										<span class="site-state-item-count">22</span>
+										<span class="site-state-item-count">23</span>
 										<span class="site-state-item-name">文章</span>
 									</a>
 								</div>
@@ -582,7 +582,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-5-13 21:43:18 | 编辑于 2022-5-21 1:16:52">2022-5-13 21:43
+							<time title="发布于 2022-5-13 21:43:18 | 编辑于 2022-5-25 11:40:49">2022-5-13 21:43
 							</time>
 						</div>
 					
@@ -606,7 +606,8 @@
 		
 	</header>
 
-	<div class="post-content" id="post_content">
+		
+			<div class="post-content" id="post_content">
 		<h1>主席树</h1>
 <p>全称为：可持久化线段树</p>
 <p>我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修改之前的序列（我们称之为历史版本）</p>
@@ -731,9 +732,8 @@
 <p>我们会发现<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[b,c]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">c</span><span class="mclose">]</span></span></span></span>这个区间里的所有数字必定选，其他的选前后缀</p>
 <p>那么我们就在线段树上面找到区间和，区间最大前缀，区间最大后缀</p>
 <p>然后合并check二分就好了</p>
-
 	</div>
-
+		
 	
 
 	
@@ -796,9 +796,9 @@
 <script type="text/javascript">
 	socialShare("#share", {
 	    title : '主席树',
-	    description : '主席树
+	    description : `主席树
 全称为：可持久化线段树
-我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修...',
+我们考虑一件事情，如果说我们对于一个线段树来说，希望它可以查询一些修...`,
 	    wechatQrcodeTitle : "分享到微信",
 	    wechatQrcodeHelper : '微信扫描二维码',
 	    source : 'http://johnsonloy.github.io/%E4%B8%BB%E5%B8%AD%E6%A0%91/'
