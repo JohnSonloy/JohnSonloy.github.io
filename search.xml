@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>6.7</title>
+      <link href="/6-7/"/>
+      <url>/6-7/</url>
+      
+        <content type="html"><![CDATA[<h1>6-7模拟赛</h1><p>（事实上只做了6个题</p><h1>P1197</h1><p>（这个题的名字还蛮好的</p><p>首先我们考虑，正难则反，这是一个很常见的套路对吧</p><p>正着的时候，目标是删点，反着的时候，目标是加点</p><p>我们需要知道的东西是集合大小和每一个连通块的大小对吧</p><p>那么，就可以用到并查集</p><p>加点的时候，一次一次把这个点连着的边加进去（当然不能加还没有加进去的点，所以要判断一下</p><p>不过需要注意的是：在加点之后，需要新加一个连通块，然后再次进行连边操作</p><h1>P5022</h1><p>这个题我们需要做的事情就是，对于一棵树（或者基环树）找到字典序最小的dfs序</p><p>那么我们考虑，刚开始肯定要在1号节点走对吧</p><p>如果是一棵树，那么我们完全可以贪心的每一次找最小的点走，这样完全正确</p><p>但是嘞，基环树怎么办</p><p>找到环然后枚举它的边，然后断，然后重新跑一遍上面的就好了（但是这个题不开O2的话这个方法过不去</p><p>似乎还有一种O(n)的做法但是我懒</p><h1>P2906</h1><p>我们考虑，曼哈顿距离不好用，但是有个东西叫做切比雪夫距离，切比雪夫距离非常好用</p><p>那么就用曼哈顿距离转切比雪夫距离，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo>=</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo separator="true">,</mo><mi>y</mi><mo>=</mo><mi>x</mi><mo>−</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x = x+y,y=x-y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span>就好了</p><p>那么我们发现，如果说对于这么一个点，与他的切比雪夫距离为x的点，构成一个正方形</p><p>但是曼哈顿距离就是个斜着的正方形非常难搞</p><p>我们发现，对于两头牛来说，如果切比雪夫距离为x，说明两头牛互相在对方的正方形里</p><p>并且如果说两头牛都有相同的邻居的话说明，我们可以用一个并查集来维护对不对</p><p>那么我们把所有的牛按照x坐标进行排序，对于一头牛，把它正方形左半部分的点都加到一个set里（动态加动态删</p><p>然后在这些点中找出y坐标与他最相近的两个点，然后用并查集连边（别问我这样是对的挺不好证明的</p><h1>P2943</h1><p>我们发现，如果把每一头牛分成一个组，那么答案就是n，所以答案上界就是n</p><p>那么说明如果有一个段有不止一个种类的食物，那么这个种类数小于根号n</p><p>那么我们考虑，把我们每一个位置，求出，以这个位置为右端点的长度最长的种类数为k的段</p><p>然后我们把他的左端点记录下来</p><p>然后我们贪心的想，一个n的序列的答案一定小于等于n+1的序列的答案</p><p>那么我们就可以对于这一点进行dp</p><h1>P5290</h1><p>形式化题意：给你一颗树，树上有点值，让你把整棵树划分成一些集合，集合的权值是集合中点的最大值</p><p>集合中的点不的存在祖先子孙关系，问所有集合的最小权值和</p><p>既然说集合中的点不存在祖先子孙关系，那么任意两个点一定有一个lca，并且这两个点分布在lca的两个不同子树中</p><p>那么我们考虑贪心</p><p>假设我们考虑到了一个节点，已经求出了他的子节点的答案</p><p>那么我们考虑合并：</p><p>两个节点进行合并的时候，把最大的集合取出来进行合并（这一定最优</p><p>但是会剩下小的集合，放进大集合里就好</p><p>那么这个操作怎么完成呢？当然是要用堆了</p><h1>CF724E</h1><p>首先这个图构成一个网络流的图，要求最大流对吧</p><p>那么我们考虑最大流转最小割</p><p>设<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">f[i][j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>表示当前dp到了第i个点，前面有j个点到原点的路被割掉了</p><p>那么考虑第i个点，我们是把它到原点割掉还是到汇点割掉</p><p>如果说到原点割掉了的话，还有其他的边可以连过来给他输送所以要把前面的边也割掉</p><p>但是到汇点割掉就没有关系了</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 模拟赛 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>概率期望</title>
       <link href="/gailv/"/>
       <url>/gailv/</url>
