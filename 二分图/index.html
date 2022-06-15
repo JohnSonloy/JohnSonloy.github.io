@@ -3,17 +3,22 @@
 <html class="article-header-style-default">
 <head>
 	
-	<title>归档 : 2022 - Johnsonloy&#39;s Blog</title>
+	<title>二分图 - Johnsonloy&#39;s Blog</title>
 	<meta charset="utf-8">
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	
-	<meta property="og:type" content="website">
-<meta property="og:title" content="Johnsonloy&#39;s Blog">
-<meta property="og:url" content="http://johnsonloy.github.io/archives/2022/page/2/index.html">
+	<meta name="description" content="二分图 我们就考虑，对于一个二分图来说，用超源连接一下左面的点，超汇连接右边的点，然后跑一边最大流，就是二分图最大匹配 定理：  二分图最大匹配&#x3D;二分图最小点覆盖 有向无环图最小不相交路径覆盖 有向无环图最小可相交路径覆盖 二分图的最大独立集等于总点数减去最大匹配等于最小边覆盖  P2756 简单的二分图 左边点是外籍，右边是嘤籍 跑最大匹配 然后对于网络流来说，如果这条正边流量为0说明已经跑过了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="二分图">
+<meta property="og:url" content="http://johnsonloy.github.io/%E4%BA%8C%E5%88%86%E5%9B%BE/index.html">
 <meta property="og:site_name" content="Johnsonloy&#39;s Blog">
+<meta property="og:description" content="二分图 我们就考虑，对于一个二分图来说，用超源连接一下左面的点，超汇连接右边的点，然后跑一边最大流，就是二分图最大匹配 定理：  二分图最大匹配&#x3D;二分图最小点覆盖 有向无环图最小不相交路径覆盖 有向无环图最小可相交路径覆盖 二分图的最大独立集等于总点数减去最大匹配等于最小边覆盖  P2756 简单的二分图 左边点是外籍，右边是嘤籍 跑最大匹配 然后对于网络流来说，如果这条正边流量为0说明已经跑过了">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-06-15T17:05:29.000Z">
+<meta property="article:modified_time" content="2022-06-15T13:52:12.462Z">
 <meta property="article:author" content="Johnsonloy">
+<meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
 
 	<meta name="theme-color" content="#5e72e4">
@@ -430,15 +435,6 @@
 
 <div class="page-information-card-container">
 	
-		
-<div class="page-information-card card bg-gradient-secondary shadow-lg border-0">
-	<div class="card-body">
-		<h3 class="text-black">归档 : 2022 </h3>
-		
-	</div>
-</div>
-
-	
 </div>
 
 <div id="sidebar_mask"></div>
@@ -467,18 +463,39 @@
 		<div id="leftbar_part2" class="widget widget_search card bg-white shadow-sm border-0">
 			<div id="leftbar_part2_inner" class="card-body">
 				
-				<div class="nav-wrapper" style="padding-top: 5px; display:none; ">
+				<div class="nav-wrapper" style="padding-top: 5px;">
 	                <ul class="nav nav-pills nav-fill" role="tablist">
 						
+							<li class="nav-item sidebar-tab-switcher">
+								<a class="active show" id="leftbar_tab_catalog_btn" data-toggle="tab" href="#leftbar_tab_catalog" role="tab" aria-controls="leftbar_tab_catalog" no-pjax>文章目录</a>
+							</li>
+						
 						<li class="nav-item sidebar-tab-switcher">
-							<a class="active show" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
+							<a class="" id="leftbar_tab_overview_btn" data-toggle="tab" href="#leftbar_tab_overview" role="tab" aria-controls="leftbar_tab_overview" no-pjax>站点概览</a>
 						</li>
 	                </ul>
 				</div>
 				<div>
 					<div class="tab-content" style="padding: 10px 10px 0 10px;">
 						
-						<div class="tab-pane fade text-center active show" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
+							<div class="tab-pane fade active show" id="leftbar_tab_catalog" role="tabpanel" aria-labelledby="leftbar_tab_catalog_btn">
+								<div id="leftbar_catalog"></div>
+								<script type="text/javascript">
+									$(function () {
+										$(document).headIndex({
+											articleWrapSelector: '#post_content',
+											indexBoxSelector: '#leftbar_catalog',
+											subItemBoxClass: "index-subItem-box",
+											itemClass: "index-item",
+											linkClass: "index-link",
+											offset: 80,
+										});
+									})
+								</script>
+								
+							</div>
+						
+						<div class="tab-pane fade text-center" id="leftbar_tab_overview" role="tabpanel" aria-labelledby="leftbar_tab_overview_btn">
 							<img id="leftbar_overview_author_image" src="https://avatars.githubusercontent.com/u/91672298?v=4" class="img-fluid rounded-circle shadow-sm" style="width: 100px;" alt="avatar">
 							<h6 id="leftbar_overview_author_name">Johnsonloy</h6>
 							<nav class="site-state">
@@ -556,18 +573,17 @@
 	<main id="main" class="site-main" role="main">
 		
 		
-		
-				
-	<article class="post card bg-white shadow-sm border-0 ">
+			
+	<article class="post post-full card bg-white shadow-sm border-0 ">
 	<header class="post-header text-center">
 		
-		<a class="post-title" href="/%E6%95%B0%E5%AD%A6/">数学</a>
+		<a class="post-title" href="/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图</a>
 		<div class="post-meta">
 			
 						
 						<div class="post-meta-detail post-meta-detail-time">
 							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-5-8 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-5-8 0:00
+							<time title="发布于 2022-6-15 17:05:29 | 编辑于 2022-6-15 13:52:12">2022-6-15 17:05
 							</time>
 						</div>
 					
@@ -576,7 +592,7 @@
 						
 						<div class="post-meta-detail post-meta-detail-words">
 							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							2k 字
+							468 字
 						</div>
 					
 						
@@ -584,424 +600,155 @@
 						
 						<div class="post-meta-detail post-meta-detail-readingtime">
 							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
+							1 分钟
 						</div>
 					
 		</div>
 		
 	</header>
 
-	<div class="post-content">
 		
-			
-		
+	<div id="encrypt-panel">
+			<input type="password" id="password">
+			<button id="submit">确定</button>
+			<div id="encrypt-message"></div>
 	</div>
+
+		<script id="encrypt-data" type="application/json">
+			{"contentHmacDigest":"e349c096b190a7408724efd481fdc649f22ce8cd76de6a72fb694b01846b8f67","encryptedContent":"fd8e60511adb9e6b1e1f7074372ea7bb5b761010ed67e4fe0c9479f866e10af257aca33860968ecd7ccd232ef69b6ab326481b34590ce9079a504c5d46d8928fda00b4d19af1182259d361ed7a19cbc48eb24e1c4b6c6fb84ecbc8364f08f3c7a541bf24aa3880a9ffcb6bbbced2648a6585b1b27030188a73d09b5a77f1fe2e783fb6f88f5022831c637d991eecd2a34f3c03aec5750f539ad6b897c5b9aa5c8e95343d6a4391ced342fa08c854dcf0c2567ed7954cafaf44a5765f2011c063a217e39428c023778556cfbedf7fcacf929250ca80c2a9b0105557d8ad317b077ec02544be2b620faafda0f8e3cde5617a4d372128779fcd49e32b3f21255b63755977303992bcd202746cf91455a9f2f1016b26341f136dbeaaafca95d260e3a01aaeb69f0f38d6e5975db74afa080a82a9ff9cbc36c8050f1ebf6e18e9931cdc6e42abaa8b8bfa70dd95cf4f3afe17a56a2b7e7205ad2d77a03027bb5eeedd0f0e8fa74c0341cb67086dd58682bc5d2b3f0be1b36071cb4c9d29cda663c38200e6cf3a3ab5336dad9de62fc8f27e2b8894d7048b54dd339aa26e533e11dfbde0b529b1650d7de2cb935714df6214078c6e34013846a03e1a0a62492851097b0002b430cab99528e6e44bd3baa21321d07479bd9aec2efb8dcd59c9cd5e741cc4168926ef4e68f8e772df388a9966fc7970590cbd0db6521055ce121f0aa461174288dd56292fca693fd8e0fc73bc8604877e0b588289d1564493bb80df3717963a7df3415072209f5dc2cc68a053b924256347aaec7fb39f1403ff63ece28200d7b89236e3851e3675dcb3affcd15d2f5489d572cb3f0bda33b0df9851b3dfc611686347d916ab375b6db107d9282233c5ac4a18325a7cb5dc68f1d8e0b47b1e085ac305265db90dfe0a757e97e6faea04b725e614ba9e2fb810e36071e051739fbdc39f9f14087b0d49e9b73074c4e18e588ec73bcb0b3978956b1fd86adc94a299fd90144b0b0d57c267f89710e7efd807cf34f8fbce20676c81025e9cbc86efc6d6377a47756010f575081a1f19a0be45a1e05e26c1fa60ecdfb1bbb49909972714685bc6bb5ee5e5e1fc2aa5d497974b527b1a9c4d5699683a0efe516adf79f9ffde3bad933014a1a56eae71a95c9b3cb96f5352912b8f636acaed5d0d7a137776f2bb1963fb8a95477139c5c45422af3258be9aae05f6dfb6305ce2afdedef9561c9442022da589051986f9deed64460cb746fb9085f7af1099755ba4dad500d127c048a5eafc527368e80df4520a2098bf813bca562661e9b004d5ced291a2b0de900b80156bc0ffb5df9ac6edc617b0e68dd44dfceef1b8bcddb82bdad3a4063d6ade5f11e9ad82b13f8198c3ec7ec7709f9523e09bb8a1e937c32f371b03f621bf54522d2f005a320bff40a0c3fedc99558437243c00578967583c0247a5f9bfddf3dcdaca9d93bb87f51c9fa63ba5c1600ea618baba08db420a170a77cdc6c1ab7094b25ec27f4ae4ef3ebe4500598d1c1c1748690268a7fce23cac450001f24c4a102b487ffcf50de231977443df335656afcfc9b4b2eaa22eaf8d58863e7ef3aac2763368b7d6915fb4ff36f4fe680703c145e2c5b3fab8741e4650c9458f15f04f8f89060963a1c74860a714a8b711aae8de0e50904c78e945967e4f043e792aef8a5a0692696b3c15ab017dc835004d13633d1c6c4def360a1ade5ad25a33e57e3e3e4fb6415a7ef13ded2eec91001a3f21814342de3b8e004b3d820021401a7a6bc3a03dbac26aa3ac0e81b9987e4f361560f69fd5380a54fba33851440385418152594db0fc7723c6b12b0ea3c56db78408ff99a1acb39c7555b8b28c6ac3cf54beffb480769762724a1062caa358e31bb5434ae5dba5a813cf3dbca2f1e8986833ba8e6894d9b351e063bf84e1ed7691f0ab77bf43d6412e6702fd755183dd47628b4a7b0f39ce832e6857e761a42efe51c240f7c69d45be6490abe58b50bc3bc268f079a085c93d9053f07e7dfa3b4c173f6ef26574a80ac06538ef45fe10f2d270b42b54df5f33ac6a582d216b8fec8ea1cf07fa1e43ce5a4484c120030b2349ab27fe8654b8087ee4b827761da8b3d5e84ae8fd4afbea5d86105ce1caba15de38cc2c1b2ed5185d8050ab96bcb8a683177219a33d48f954aa9abe5c62b4b00e27d9f8909986eda302559a1a924015eb20a65bf863f84403e7e61658b05f1235169803196f33619e2a3bc5181a817bafc16b79b77fe89730abed6f39bbce9174e2d7797727ed9c324b01efeedc1f675bb32916705a717ece81eed6d0e450985b50d6a7577c1d24303db78aabef1106fec1c71fce4027386f5bcbf5736dc7cf28e99b9cbdb3cdbaf8aacbf06774236554c6a78bbbbdf14729d9aff3863447505d693d4e2c785151fa9db5f538c1670620776b14de1b5b953fc6f7a1d7c264ffc767faefc99550a758b3394396ac72e7bd3a014f10bcfc35ba9b9f3de4704f5ccdad68cfa00aed"}
+		</script>
+	<div class="post-content" id="post_content">
+	</div>
+	<script src="/assets/js/encrypt.js"></script>
+
+		
+	
+
+	
 
 	
 		<div class="post-tags">
 			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
+			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag">图论</a>
 		</div>
 	
 </article>
 
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%8A%B6%E5%8E%8Bdp%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">状压动态规划做题笔记</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-3-29 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-3-29 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							2.2k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
+	<div id="share_container">
+	<div id="share" data-initialized="true">
+		<a class="no-pjax icon-wechat" tooltip="分享到微信">
+			<button class="btn btn-icon btn-success">
+				<span class="btn-inner--icon"><i class="fa fa-weixin"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-douban" tooltip="分享到豆瓣">
+			<button class="btn btn-icon btn-primary" style="background: #209261;border: none;">
+				豆
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qq" tooltip="分享到 QQ">
+			<button class="btn btn-icon btn-primary" style="background: #2196f3;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-qq"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-qzone" tooltip="分享到 QQ 空间">
+			<button class="btn btn-icon btn-primary" style="background: #ffc107;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-star"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-weibo" tooltip="分享到微博">
+			<button class="btn btn-icon btn-warning">
+				<span class="btn-inner--icon"><i class="fa fa-weibo"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-facebook" tooltip="分享到 Facebook">
+			<button class="btn btn-icon btn-primary" style="background: #283593;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-facebook"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-twitter" tooltip="分享到 Twitter">
+			<button class="btn btn-icon btn-primary" style="background: #03a9f4;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-twitter"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-telegram" href="https://telegram.me/share/url?url=http://johnsonloy.github.io/%E4%BA%8C%E5%88%86%E5%9B%BE/&text=二分图" tooltip="分享到 Telegram">
+			<button class="btn btn-icon btn-primary" style="background: #42a5f5;border: none;">
+				<span class="btn-inner--icon"><i class="fa fa-telegram"></i></span>
+			</button>
+		</a>
+		<a target="_blank" class="no-pjax icon-copy-link" id="share_copy_link" tooltip="复制链接">
+			<button class="btn btn-icon btn-default">
+				<span class="btn-inner--icon"><i class="fa fa-link"></i></span>
+			</button>
+		</a>
 	</div>
+	<button id="share_show" class="btn btn-icon btn-primary" tooltip="分享">
+		<span class="btn-inner--icon"><i class="fa fa-share"></i></span>
+	</button>
+</div>
+<script type="text/javascript">
+	socialShare("#share", {
+	    title : '二分图',
+	    description : `二分图
+我们就考虑，对于一个二分图来说，用超源连接一下左面的点，超汇连接右边的点，然后跑一边最大流，...`,
+	    wechatQrcodeTitle : "分享到微信",
+	    wechatQrcodeHelper : '微信扫描二维码',
+	    source : 'http://johnsonloy.github.io/%E4%BA%8C%E5%88%86%E5%9B%BE/'
+	});
+	$("#share_show")[0].onclick = function(){
+		$("#share_container").addClass("opened");
+	};
+	$("#share_copy_link")[0].onclick = function(){
+		let input = document.createElement('input');
+		document.body.appendChild(input);
+		input.setAttribute("value", window.location.href);
+		input.setAttribute("readonly", "readonly");
+		input.setAttribute("style", "opacity: 0;mouse-events:none;");
+		input.select();
+		if (document.execCommand('copy')){
+			iziToast.show({
+				title: '链接已复制',
+				message: "链接已复制到剪贴板",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#2dce89',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-check',
+				timeout: 5000
+			});
+		}else{
+			iziToast.show({
+				title: '复制失败',
+				message: "请手动复制链接",
+				class: 'shadow',
+				position: 'topRight',
+				backgroundColor: '#f5365c',
+				titleColor: '#ffffff',
+				messageColor: '#ffffff',
+				iconColor: '#ffffff',
+				progressBarColor: '#ffffff',
+				icon: 'fa fa-close',
+				timeout: 5000
+			});
+		}
+		document.body.removeChild(input);
+	};
+</script>
 
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
-		</div>
-	
-</article>
 
 
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
+
+
+<div class="post-navigation card shadow-sm"><div class="post-navigation-item post-navigation-pre"></div><div class="post-navigation-item post-navigation-next"><span class="page-navigation-extra-text">下一篇 <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span><a href="/dandiaoduiliudp/" rel="next"> 单调队列优化dp</a></div></div>
+
+
+
+
 		
-		<a class="post-title" href="/%E6%A0%91%E5%BD%A2dp%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">树形dp刷题记录</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-3-27 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-3-27 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							2.6k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							10 分钟
-						</div>
-					
-		</div>
 		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80/">后缀数组基础</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-3-13 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-3-13 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							1.9k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/" rel="tag">字符串</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B0/">线性动态规划做题笔记</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-3-13 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-3-13 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							5k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							19 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag">动态规划</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/">组合数学</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-2-26 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-2-26 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							3.9k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							16 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%88%9D%E6%AD%A5/">网络流初步</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-2-7 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-2-7 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							4.5k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							16 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%9B%BE/" rel="tag">图</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/%E7%BE%A4%E8%AE%BA/">群论</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-1-29 0:00:00 | 编辑于 2022-6-15 13:52:12">2022-1-29 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							1.7k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							7 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag">数学</a>
-		</div>
-	
-</article>
-
-
-	<article class="post card bg-white shadow-sm border-0 ">
-	<header class="post-header text-center">
-		
-		<a class="post-title" href="/tarjan/">tarjan</a>
-		<div class="post-meta">
-			
-						
-						<div class="post-meta-detail post-meta-detail-time">
-							<i class="fa fa-clock-o" aria-hidden="true"></i>
-							<time title="发布于 2022-1-9 0:00:00 | 编辑于 2022-3-27 13:04:29">2022-1-9 0:00
-							</time>
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-words">
-							<i class="fa fa-file-word-o" aria-hidden="true"></i>
-							4.5k 字
-						</div>
-					
-						
-							<div class="post-meta-devide">|</div>
-						
-						<div class="post-meta-detail post-meta-detail-readingtime">
-							<i class="fa fa-hourglass-end" aria-hidden="true"></i>
-							18 分钟
-						</div>
-					
-		</div>
-		
-	</header>
-
-	<div class="post-content">
-		
-			
-				花了 3-4 天的时间干掉了这个算法：tarjan（虽然只是干掉了板子）
-有向图
-我刚开始学了一天的无向图，看懂了板子之后，机房大佬告诉我先学有向图的比较好……然后就开始学有向图……
-有向图 tarjan 的内容比较少，只有强连通分量，缩点，必经点和必经边
-前置定义
-给定一个有向图，如果在这个有向图中存在一个点，从它出发可以到达图中所有的点，那么称...
-			
-		
-	</div>
-
-	
-		<div class="post-tags">
-			<i class="fa fa-tags" aria-hidden="true"></i>
-			<a class="tag badge badge-secondary post-meta-detail-tag -none-link" href="/tags/%E5%9B%BE/" rel="tag">图</a>
-		</div>
-	
-</article>
-
-
-
-<nav><ul class="pagination"><li class="page-item"><a aria-label="Previous Page" class="page-link" href="/archives/2022/"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li><li class="page-item"><a class="page-link" href="/archives/2022/">1</a></li><li class="page-item active"><span class="page-link" style="cursor: default;">2</span></li></ul></nav><nav><ul class="pagination pagination-mobile"><li class="page-item"><a aria-label="Previous Page" class="page-link" href="/archives/2022/"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li><li class="page-item"><a class="page-link" href="/archives/2022/">1</a></li><li class="page-item active"><span class="page-link" style="cursor: default;">2</span></li></ul></nav>
-
-
-			
 		
 		
 
