@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>奇技淫巧</title>
+      <link href="/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/"/>
+      <url>/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h1>主要用来写一些自己的漏洞</h1><p>最大的漏洞：不记得更新这篇博客……</p><h2 id="数据结构">数据结构</h2><p>Splay：（平均一个题4个小时我也是很服气</p><ol><li><p>一定要记得随时splay要不然会T（当然还得记得及时update不然在一些需要siz的操作会寄</p></li><li><p>如果是区间翻转的时候，splay的时候要顺便pushdown，先pushdown父节点再pushdown自己（我也不知道为什么反正这样对反过来就错</p></li><li><p>（还有就是我的splay空间复杂度非常玄学，自己算算然后开数组就行了，能开多大开多大</p></li><li><p>永无乡：在一个并查集里的东西要记得特判，不然就像我的splay一样所有的cnt都大于1了呜呜呜（然后就90分，我一直还以为并查集没啥错误来着真的是</p></li></ol><p>LCT:（竟然一遍过了一次太nb了！</p><ol><li>区间翻转的时候，要开一个数组往上记录都要更新哪些点，然后把那些点拿出来都pushdown一遍，但是我总是忘了y = fa[y] 和top–</li></ol><p>统计全局的tag，插入的时候减去tag，取出的时候加上tag</p><p>如果在求较大较小值的时候，设初值一定要好好设……能设多大（小）设多大（小）……</p><h2 id="DP">DP:</h2><p>有很多的dp是有一些不能相邻一类的条件，这时候我们可以设状态表示现在又多少段，每个段怎么样的。。。</p><p>一个dp式子或者数学式子可以在交换求和号等等的交换情况下交换出来一个可以用前缀和优化的形式</p><p>有时候我们的dp是可以带着方程的系数进去敌退出来结尾的方程系数的</p><p>区间dp很多时候都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>f</mi><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo separator="true">,</mo><mi>k</mi><mo separator="true">,</mo><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">f_{i,j,k,l}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9805em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mpunct mtight">,</span><span class="mord mathnormal mtight" style="margin-right:0.01968em;">l</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span>表示i-j区间之内的k-l的值域或者什么的，并且转移的时候k和l可以从k+1,l；k,l-1继承过来以减少复杂度</p><p>很多的dp是可以用段数表示状态的，然后往里放数字合并或者新加段</p><p>有的dp方程满足单调性可以用双指针单调转移</p><p>很多dp都不需要通过下标转移，一个状态可以表示这个状态的，类似于笛卡尔树dp？</p><h2 id="数学">数学</h2><p>两个数的gcd一定小于等于他们的差</p><p>鸽巢原理！！！一定记住！！！</p><p>容斥：</p><p>小星星：如果说是一个排列，那么我们可以枚举点集为可以出现的点集，那么直接容斥就好了</p><p>概率：</p><p>如果说是一些出现或者不出现的东西，那么他们和的期望就是概率之和（权值为1</p><p>我们有时候可以把概率转化成一个左右两边转移过来的形式，那么我们有时候可以直接移项转成递推，也可以带状矩阵高斯消元</p><p>一个数字是可以用k个根号n和j个1拼出来的（k和j都小于等于根号n</p><p>当然还可以用二进制拼出来</p><h2 id="搜索">搜索</h2><p>一个图的dfs树没有横叉边，一个图的bfs树没有返祖边</p><p>9.14更新</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>NOIP前做题记录</title>
       <link href="/NOIP%E5%89%8D%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
       <url>/NOIP%E5%89%8D%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
