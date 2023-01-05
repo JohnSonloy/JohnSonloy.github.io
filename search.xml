@@ -8,7 +8,7 @@
       <link href="/%E6%80%BB%E7%BB%93/"/>
       <url>/%E6%80%BB%E7%BB%93/</url>
       
-        <content type="html"><![CDATA[<h2 id="2023-1-4">2023.1.4</h2><p>2023.1.4总结</p><p>P4569 [BJWC2011]禁忌 AC自动机上跑dp，矩乘优化转移，比较套路</p><p>CF600E Lomsat gelral dsu on tree 动态维护</p><p>P6822 [PA2012]Tax 把边转化成点跑最短路</p><p>BZOJ2069 [POI2004]ZAW 二进制拆分最短路</p><p>BZOJ4453 cys就是要拿英魂！ 后缀数组+单调栈维护</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="2023-1-4">2023.1.4</h2><p>2023.1.4总结</p><p>P4569 [BJWC2011]禁忌 AC自动机上跑dp，矩乘优化转移，比较套路</p><p>CF600E Lomsat gelral dsu on tree 动态维护</p><p>P6822 [PA2012]Tax 把边转化成点跑最短路</p><p>BZOJ2069 [POI2004]ZAW 二进制拆分最短路</p><p>BZOJ4453 cys就是要拿英魂！ 后缀数组+单调栈维护</p><h2 id="2023-1-5">2023.1.5</h2><p>P4878 [USACO05DEC]Layout G 差分约束板子 没啥说的</p><p>CF1182D Complete Mirror 一个很棒的结论题，当然也可以用树哈希做但是不好写</p><p>CF360E Levko and Game 一个最短路的结论题</p><p>CF715C Digit Tree 很好的点分治练手题</p><p>BZOJ3232 圈地游戏 很牛的网络流建图，要用最大权闭合子图</p>]]></content>
       
       
       
