@@ -118,25 +118,6 @@
     
     
     <entry>
-      <title>数位</title>
-      <link href="/%E6%95%B0%E4%BD%8D/"/>
-      <url>/%E6%95%B0%E4%BD%8D/</url>
-      
-        <content type="html"><![CDATA[<h1>数位dp</h1><p>按位考虑，一大特点，并且一般的数位dp都会处理成类似于前缀和的形式，然后像区间和一样</p><p>dp的时候枚举每一位，然后考虑是不是已经小于原来的数字了，如果小于之后这一位的上限和等于的时候是不一样的</p><h1>P2602</h1><p>首先就按照上面的流程进行一遍递推</p><p>考虑到这一位如果是第i位，如果说这一位比原序列的数字小一点的话，那么我们直接让答案数组加上这一位是多少多少的时候的数字个数，并且要把这一位也算上，i的话应该出现的次数是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{i-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8247em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8247em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>呢</p><p>如果说是相等的时候，那么就考虑，这一位是原序列的数字的话，那么计算这个数字出现了多少次呢，就是后面的数字有多少个（其实就是把后面的数字求个和（10进制的求和嗷，就是那种没加一位就乘10的拿个</p><p>就好啦</p><h1>P2518</h1><p>这个题挺妙的说实话</p><p>首先我们发现，如果说把一个数字的0删去，就相当于是把这个0挪到最前面，变成前导0</p><p>那么这个题就转化成了，对于这个给定的数字，把它进行多重集的全排列然后和原数比较大小，如果说比他小就加加</p><p>那么就按位考虑</p><p>我们枚举第一个比原数列小的位数（从高到低</p><p>如果这一位就已经比原数列小了，那么剩下的随便就好，用多重集的全排列</p><p>如果这一位并不比原数列小，那么就把原来的权值数组减去这一位，然后继续进行下去</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 动态规划 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>二分图</title>
       <link href="/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
       <url>/%E4%BA%8C%E5%88%86%E5%9B%BE/</url>
